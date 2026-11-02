@@ -1,1 +1,96 @@
+<!DOCTYPE html>
+<html lang="zh-TW">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>四位數幾 A 幾 B 猜數字 - 版本總覽</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+</head>
+<body class="bg-slate-100 min-h-screen py-12 px-4">
+  <div class="max-w-4xl mx-auto space-y-8">
+    
+    <!-- 頁頭說明 -->
+    <header class="text-center space-y-3">
+      <h1 class="text-3xl font-extrabold text-slate-800 tracking-tight">🎯 四位數幾 A 幾 B 猜數字專案</h1>
+      <p class="text-slate-600 max-w-xl mx-auto text-sm sm:text-base">
+        本專案展示從單局本機遊玩、多局歷程呈現，到結合 Google Apps Script (GAS) 雲端自動存檔的三個演進版本。
+      </p>
+    </header>
 
+    <!-- 三個版本的選單卡片 -->
+    <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
+      
+      <!-- 版本一卡片 -->
+      <div class="bg-white rounded-xl shadow-md border border-slate-200 p-6 flex flex-col justify-between hover:shadow-lg transition">
+        <div class="space-y-3">
+          <div class="flex items-center justify-between">
+            <span class="text-xs font-bold px-2.5 py-1 bg-blue-100 text-blue-700 rounded-full">Version 1</span>
+            <span class="text-xs text-slate-400">頁面記憶</span>
+          </div>
+          <h2 class="text-xl font-bold text-slate-800">版本一：單局遊戲</h2>
+          <ul class="text-xs text-slate-600 space-y-1.5 list-disc list-inside">
+            <li>基礎幾 A 幾 B 判斷規則</li>
+            <li>無效輸入防呆與提示</li>
+            <li>開關式除錯模式（顯示答案）</li>
+            <li>重整後開始新局（不保存）</li>
+          </ul>
+        </div>
+        <a href="./v1/index.html" class="mt-6 block text-center w-full py-2.5 px-4 bg-blue-600 hover:bg-blue-700 text-white font-medium rounded-lg text-sm transition">
+          進入 V1 遊戲 ➔
+        </a>
+      </div>
+
+      <!-- 版本二卡片 -->
+      <div class="bg-white rounded-xl shadow-md border border-slate-200 p-6 flex flex-col justify-between hover:shadow-lg transition">
+        <div class="space-y-3">
+          <div class="flex items-center justify-between">
+            <span class="text-xs font-bold px-2.5 py-1 bg-indigo-100 text-indigo-700 rounded-full">Version 2</span>
+            <span class="text-xs text-slate-400">當頁多局</span>
+          </div>
+          <h2 class="text-xl font-bold text-slate-800">版本二：多局歷史</h2>
+          <ul class="text-xs text-slate-600 space-y-1.5 list-disc list-inside">
+            <li>包含 V1 所有基礎與除錯功能</li>
+            <li>支援「開新局」保留舊局歷程</li>
+            <li>區分已猜對與未完成狀態</li>
+            <li>當前頁面多局歷程對比</li>
+          </ul>
+        </div>
+        <a href="./v2/index.html" class="mt-6 block text-center w-full py-2.5 px-4 bg-indigo-600 hover:bg-indigo-700 text-white font-medium rounded-lg text-sm transition">
+          進入 V2 遊戲 ➔
+        </a>
+      </div>
+
+      <!-- 版本三卡片 (雲端版) -->
+      <div class="bg-white rounded-xl shadow-md border border-amber-300 p-6 flex flex-col justify-between hover:shadow-lg transition relative overflow-hidden">
+        <div class="absolute top-0 right-0 bg-amber-400 text-amber-950 font-bold text-[10px] px-3 py-0.5 rounded-bl">
+          GAS 雲端版
+        </div>
+        <div class="space-y-3">
+          <div class="flex items-center justify-between">
+            <span class="text-xs font-bold px-2.5 py-1 bg-amber-100 text-amber-800 rounded-full">Version 3</span>
+            <span class="text-xs text-emerald-600 font-medium">試算表同步</span>
+          </div>
+          <h2 class="text-xl font-bold text-slate-800">版本三：雲端存檔</h2>
+          <ul class="text-xs text-slate-600 space-y-1.5 list-disc list-inside">
+            <li>輸入玩家代號跨裝置讀取</li>
+            <li>每次有效猜測自動寫入試算表</li>
+            <li>支援選取舊的「未完成局」繼續猜</li>
+            <li>需透過 GAS 部署網址開啟</li>
+          </ul>
+        </div>
+        
+        <!-- ⚠️ 記得將下面的 href 替換成你的 GAS /exec 網址 -->
+        <a href="https://script.google.com/macros/s/你的部署ID/exec" target="_blank" rel="noopener noreferrer" class="mt-6 block text-center w-full py-2.5 px-4 bg-amber-600 hover:bg-amber-700 text-white font-medium rounded-lg text-sm transition shadow-sm">
+          開啟 V3 雲端遊戲 ↗
+        </a>
+      </div>
+
+    </div>
+
+    <footer class="text-center text-xs text-slate-400 pt-6">
+      <p>專案程式碼與作業備份於 GitHub Repository | 數位科技概論</p>
+    </footer>
+
+  </div>
+</body>
+</html>
